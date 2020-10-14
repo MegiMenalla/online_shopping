@@ -1,0 +1,65 @@
+{% extends 'main.html' %}
+
+{% load static %}
+
+{% block permbajtje %}
+
+<div class="container">
+     <div class="row">
+        <div class="col text-center pt-4">
+           <a href="{% url 'dyqan' dyqan.id %}"> <strong><h1>{{ emer }} </h1> </strong></a>
+        </div>
+
+    </div>
+    <div class="row pt-3">
+        <div class="col-6">
+            <div class="card" style="width: 30rem;">
+              <img src="{{dyqan.logo}}" style="width:480px; height:300px; ">
+              <div class="card-body bg-white">
+                <p class="card-text "><strong>{{emer}}</strong> siguron një përvoje të paharrueshme blerjesh duke ofruar ndërthurjen më të mirë të markave ndërkombëtare të shitjes me pakicë me shërbimin ndaj klientit, të gjitha në një ambient tërheqës dhe modern.
+                <hr>Na gjeni në  <strong><i> {{ dyqan.adresa }}.</i> </strong></p>
+              </div>
+            </div>
+        </div>
+         <div class="col-6">
+             <div class="row">
+                 <div class="jumbotron jumbotron-fluid pt-3" style="background-color:transparent !important;">
+                  <div class="container">
+
+                    <p class="lead">Vlera totale e te gjithe produkteve ne {{ emer }} eshte: </p>
+                    <h5>{{ total_produkt }} Leke </h5>
+                  </div><hr>
+            </div>
+
+             </div>
+             <div class="row">
+                 <div class="jumbotron jumbotron-fluid pt-3" style="background-color:transparent !important;">
+                      <div class="container">
+                        <p class="lead">Vlera totale e te gjithe produkteve sipas kategorive ne {{ emer }} eshte: </p>
+                          <table class="table table-sm">
+                            <tr>
+                                <th>Kategori</th>
+                                <th>Vlera totale ne leke</th>
+
+                            </tr>
+                            {% for tip, total in vlera_per_tipe.items %}
+                            <tr>
+                                <td>{{ tip }}</td>
+                                <td>{{ total }}</td>
+                            </tr>
+                            {% endfor %}
+                        </table>
+                      </div><hr>
+                 </div>
+
+             </div>
+
+
+          </div>
+
+
+     </div>
+
+</div>
+
+{% endblock%}

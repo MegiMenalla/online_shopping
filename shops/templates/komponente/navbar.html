@@ -1,0 +1,36 @@
+{% load static %}
+  <nav class="navbar py-0 navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <strong>SHOP</strong>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-7" aria-controls="navbarSupportedContent-7" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent-7">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="{%url 'home'  %}">Kryefaqja
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="{%url 'porosite_e_mia'  %}">Porosite e mia</a>
+          </li>
+          <li class="nav-item active text-white">
+              <form>
+                  {{ produktfilter.form }}
+              </form>
+          </li>
+
+        </ul>
+
+      </div>
+    </div>
+       <span class="text-white mr-2">Hi  {{request.user}}  </span>
+     {% if user.is_authenticated %}
+        <span ><a href="{% url 'logoutUser' %}"  class="btn btn-sm btn-outline-warning text-white pl-3 pr-3">Dil</a></span>
+     {% else %}
+        <span ><a href="{% url 'logoutUser' %}"  class="btn btn-sm btn-outline-warning text-white ">Hyr</a></span>
+     {% endif %}
+  </nav>

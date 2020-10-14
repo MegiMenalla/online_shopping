@@ -1,0 +1,162 @@
+{% extends 'main.html' %}
+
+{% load static %}
+
+{% block permbajtje %}
+<div class="view" style="background-image: url({% static 'images/bg.png' %});height:600px;width:100%;opacity: 0.8; background-repeat: no-repeat; background-size: cover; background-position: center center;">
+    <!-- Mask & flexbox options-->
+    <div class="align-items-center mask rgba-gradient">
+      <!-- Content -->
+      <div class="container">
+        <!--Grid row-->
+        <div class="row pt-5">
+          <!--Grid column-->
+          <div class="col-md-6 mb-5   white-text text-center text-md-left">
+            <h1 class="h1-responsive font-weight-bold wow  pt-5 pl-0 position-static" data-wow-delay="0.3s">BLI ONLINE</h1>
+            <hr class="hr-light wow fadeOutLeft" data-wow-delay="0.3s">
+            <h6 class="mb-3 wow fadeInLeft" data-wow-delay="0.3s">
+                <form class="form-inline">
+                   <div class="md-form my-0 align-center position-static">
+                    <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                   </div>
+                </form>
+            </h6>
+
+          </div>
+
+        </div>
+
+
+       </div>
+        <!--Grid row-->
+    </div>
+     <div class="row">
+          <!--Grid column-->
+             <div class="col-md-6 mb-5 pl-5 ml-5   white-text text-center text-md-left position-static">
+                 <a class="btn btn-outline-dark ml-5 mt-5" href="{% url 'logini' %}" >HYR</a>
+                 <a class="btn btn-outline-dark ml-5 mt-5" href="{% url 'regjistrohu' %}">REGJISTROHU</a>
+             </div>
+     </div>
+
+      <!-- Content -->
+</div>
+
+
+<div class="row" style="height:200px;">
+  <div class="col-1 align-items-center">
+      <div class="btn btn-outline-danger ml-5 mt-5">
+          <a >Clothes</a>
+      </div>
+  </div>
+    <div class="col-1 align-items-center">
+      <div class="btn btn-outline-warning ml-5 mt-5">
+          <a >Shoes</a>
+      </div>
+  </div>
+    <div class="col-1 align-items-center">
+      <div class="btn btn-outline-secondary ml-5 mt-5">
+          <a >Tech</a>
+      </div>
+  </div>
+    <div class="col-1 align-items-center">
+      <div class="btn btn-outline-info ml-5 mt-5">
+          <a >Food</a>
+      </div>
+  </div>
+  <div class="col-1 align-items-center">
+      <div class="btn btn-outline-danger ml-5 mt-5">
+          <a >Clothes</a>
+      </div>
+  </div>
+    <div class="col-1 align-items-center">
+      <div class="btn btn-outline-warning ml-5 mt-5">
+          <a >Shoes</a>
+      </div>
+  </div>
+    <div class="col-1 align-items-center">
+      <div class="btn btn-outline-secondary ml-5 mt-5">
+          <a >Tech</a>
+      </div>
+  </div>
+    <div class="col-1 align-items-center">
+      <div class="btn btn-outline-info ml-5 mt-5">
+          <a >Food</a>
+      </div>
+  </div>
+    <div class="col-1 align-items-center">
+      <div class="btn btn-outline-warning ml-5 mt-5">
+          <a >Food</a>
+      </div>
+  </div>
+    <div class="col-1 align-items-center">
+      <div class="btn btn-outline-danger ml-5 mt-5">
+          <a >Food</a>
+      </div>
+  </div>
+    <div class="col-1 align-items-center">
+      <div class="btn btn-outline-dark ml-5 mt-5">
+          <a >Food</a>
+      </div>
+  </div>
+</div>
+
+
+
+<div class="row pt-5 pb-5" style="height:300px;">
+    <div class="col text-center">
+       <strong><h1 style="font-size: 60px;">I shop, therefore I am.</h1></strong>
+
+    </div>
+</div>
+
+
+
+<div class=view" style="background-image: url('https://image.freepik.com/free-photo/unrecognizable-woman-sitting-relaxed-sofa-home-working-her-laptop-horizontal-shot_236854-23051.jpg'); height:500px; width:100%;background-repeat: no-repeat; background-size: cover; background-position: center center; ">
+
+</div>
+
+
+
+
+
+
+
+<div class="view pt-5 mt-5">
+<div class="row row-cols-1 row-cols-md-3  ml-5" >
+{% for dyqan in dyqane %}
+
+
+    <!-- Card -->
+    <div class="col-3 card h-100 mt-5 ml-5 mr-3 pl-0 pr-0">
+
+      <!--Card image-->
+      <div class="view overlay">
+        <img class="card-img-top" src="{{dyqan.logo}}"
+          alt="Card image cap" style="height:250px">
+      </div>
+
+      <!--Card content-->
+      <div class="card-body bg-light">
+
+        <!--Title-->
+        <h4 class="card-title">{{dyqan.emer}}</h4>
+        <!--Text-->
+        <p class="card-text">{{dyqan.adresa}}.</p>
+        <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+        <a href="{% url 'dyqan' dyqan.id %}" class="btn btn-outline-info btn-md">Shiko me shume</a>
+
+      </div>
+
+    </div>
+    <!-- Card -->
+
+
+{% endfor %}
+</div>
+
+
+</div>
+
+
+
+{% endblock%}

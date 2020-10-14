@@ -1,0 +1,40 @@
+{% extends 'main.html' %}
+
+{% load static %}
+{% block permbajtje %}
+
+
+<div class="row">
+    <div class="col ">
+        <div class="card card-body pl-5 ml-5 mr-5 mb-3">
+            <table class="table table-sm" style="width:70%">
+                <thead>
+                            <th></th>
+                            <th>Produkt</th>
+                            <th>Dyqan</th>
+                            <th>Cmimi</th>
+                            <th></th>
+                </thead><hr>
+                {% for porosi in porosite %}
+                <tr>
+                    <td><img src="{{ porosi.produkt.img_src }}" style="height:70px; width=50px;"></td>
+                    <td>{{ porosi.produkt.emer }}</td>
+                    <td>{{ porosi.dyqan.emer }}</td>
+                    <td>{{ porosi.cmimi }}</td>
+                    <td><a href="{% url 'hiq' porosi.id %}" class="btn btn-sm btn-outline-danger" >Hiq</a></td>
+                </tr>
+                {% endfor  %}
+            </table>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<a href="{% url 'home' %}" class="btn  btn-info mt-5 ml-5 pr-5 pl-5 mb-5"> Vazhdo te blesh</a>
+ <span><a href="{% url 'paguaj' %}" class="btn  btn-warning mt-5 ml-5 pr-5 pl-5 mb-5">Paguaj</a></span>
+
+
+{% endblock %}

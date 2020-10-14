@@ -1,0 +1,19 @@
+{% extends 'main.html' %}
+
+{% load static %}
+{% block permbajtje %}
+
+<div class="card card-body pt-5">
+    <h3>{{ emer2 }}</h3>
+    <h5>{{ emer1 }}</h5>
+     <form method = 'POST' action="" class="pl-5 ml-5">
+                            {% csrf_token %}
+                            {{ form_shto }}
+                           <input type="submit" value="KONFIRMO">
+                        </form>
+</div>
+<div style="background-color: white;">
+    <img src="https://media.giphy.com/media/pHXNzcgU98fgRE2aOn/giphy.gif" style=" display: block;margin-left: auto;margin-right: auto; height:500px;">
+</div>
+
+{% endblock %}
