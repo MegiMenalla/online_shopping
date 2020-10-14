@@ -79,16 +79,6 @@ def krijo_lidhjet():
             sasia = line[10]
             krijo_lidhje(id_produkti, id_dyqani, cmimi, sasia)
 
-'''
-def krijo_DyqanProduktet():
-    with open('dyqane.csv', 'r', encoding='utf8') as data:
-        reader = csv.reader(data)
-        for line in reader:
-            prod = line[1]
-            dyqan = line[5]
-            cmimi = line[9]
-            sasia = line[10]
-            krijo_DyqanProdukt(prod, dyqan, cmimi, sasia)'''
 
 
 def zbraz():
@@ -118,5 +108,4 @@ def run():
     print('Numri i dyqaneve pas ...', DyqaneCounter())
     print('krijo lidhjet')
     krijo_lidhjet()
-    # print('Krijo tabelen me attrb shtese ...')
-    # krijo_DyqanProduktet()
+
